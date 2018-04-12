@@ -228,7 +228,7 @@ waiting for the publish event.
 
 let receive_report (s : string) : unit =
   let publish_listener () : unit = Printf.printf "%s" s in
-  WEvent.add_listener publish publish_listener;
+  let _ = WEvent.add_listener publish publish_listener in
   ()
 ;;
 
